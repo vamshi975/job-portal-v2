@@ -1,19 +1,39 @@
-# Data files - tracked intentionally when needed
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+.env
+.env.*
+
+# UV — uv.lock is intentionally committed
+# (no entry here)
+
+# Data files — committed intentionally when needed
 daily_data/*.parquet
 data/*.parquet
 data/*.pkl
 *.csv
 
-# Python
-__pycache__/
-*.py[cod]
-.venv/
-.env
+# Generated documents — committed intentionally when needed
+documents/*.docx
 
 # Node / Vue
 node_modules/
 dist/
 .nuxt/
+frontend/node_modules/
+frontend/dist/
 
 # OS
 .DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
