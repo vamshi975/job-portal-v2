@@ -1,0 +1,69 @@
+personal:
+  name: Vamshi Bhushanaboina
+  current_title: Data Scientist
+  experience_years: 5
+  nationality: Indian
+  location: Germany
+  german_residence: true
+
+skills:
+  programming:
+    - Python
+    - SQL
+  ml_frameworks:
+    - scikit-learn
+    - pandas
+    - numpy
+    - PyTorch
+  cloud:
+    - Azure
+    - Azure ML
+    - Azure Databricks
+  ai_llm:
+    - RAG
+    - LLM
+    - Agentic AI
+    - LangChain
+    - OpenAI API
+    - Prompt Engineering
+  data_engineering:
+    - PySpark
+    - dbt
+    - Databricks
+    - ETL pipelines
+  tools:
+    - Git
+    - Docker
+    - Power BI
+    - Jupyter
+
+industries:
+  - CRM
+  - HR
+  - Insurance
+
+education:
+  - degree: Master
+    field: ""        # fill in your field of study
+    institution: ""  # fill in your university
+    country: Germany
+    year: ""
+  - degree: BTEC
+    field: ""        # fill in your field of study
+    institution: ""  # fill in your institution
+    country: India
+    year: ""
+
+languages:
+  - language: English
+    level: C1
+  - language: German
+    level: B2
+
+target_roles:
+  - Data Scientist
+  - Machine Learning Engineer
+  - AI Engineer
+  - MLOps Engineer
+  - Data Engineer
+  - Analytics Engineer

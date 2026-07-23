@@ -1,0 +1,178 @@
+countries:
+  - name: Germany
+    country_indeed: Germany
+    location: Germany
+    sites: [linkedin, indeed, glassdoor]
+    search_terms:
+      - data scientist
+      - machine learning engineer
+      - ai engineer
+      - data engineer
+      - analytics engineer
+      - data analyst
+      - nlp engineer
+      - rag developer
+      - ai developer
+      - mlops engineer
+
+  - name: Netherlands
+    country_indeed: Netherlands
+    location: Netherlands
+    sites: [linkedin, indeed, glassdoor]
+    search_terms:
+      - data scientist
+      - machine learning engineer
+      - ai engineer
+      - data engineer
+      - analytics engineer
+      - data analyst
+      - nlp engineer
+      - rag developer
+      - ai developer
+      - mlops engineer
+
+  - name: Belgium
+    country_indeed: Belgium
+    location: Belgium
+    sites: [linkedin, indeed, glassdoor]
+    search_terms:
+      - data scientist
+      - machine learning engineer
+      - ai engineer
+      - data engineer
+      - analytics engineer
+      - data analyst
+      - nlp engineer
+      - rag developer
+      - ai developer
+      - mlops engineer
+
+  - name: India
+    country_indeed: India
+    location: India
+    # Glassdoor excluded (unstable for India per research ticket #3)
+    # Naukri added as India's dominant job board
+    sites: [linkedin, indeed, naukri]
+    search_terms:
+      - data scientist
+      - machine learning engineer
+      - ai engineer
+      - data engineer
+      - analytics engineer
+      - data analyst
+      - nlp engineer
+      - rag developer
+      - ai developer
+      - mlops engineer
+
+  - name: United States
+    country_indeed: USA
+    location: United States
+    sites: [linkedin, indeed, glassdoor]
+    search_terms:
+      - data scientist
+      - machine learning engineer
+      - ai engineer
+      - data engineer
+      - analytics engineer
+      - data analyst
+      - nlp engineer
+      - rag developer
+      - ai developer
+      - mlops engineer
+
+  - name: Canada
+    country_indeed: Canada
+    location: Canada
+    sites: [linkedin, indeed, glassdoor]
+    search_terms:
+      - data scientist
+      - machine learning engineer
+      - ai engineer
+      - data engineer
+      - analytics engineer
+      - data analyst
+      - nlp engineer
+      - rag developer
+      - ai developer
+      - mlops engineer
+
+  - name: Denmark
+    country_indeed: Denmark
+    location: Denmark
+    # Glassdoor NOT supported for Denmark (raises exception per research ticket #3)
+    sites: [linkedin, indeed]
+    search_terms:
+      - data scientist
+      - machine learning engineer
+      - ai engineer
+      - data engineer
+      - analytics engineer
+      - data analyst
+      - nlp engineer
+      - rag developer
+      - ai developer
+      - mlops engineer
+
+  - name: Sweden
+    country_indeed: Sweden
+    location: Sweden
+    # Glassdoor NOT supported for Sweden (raises exception per research ticket #3)
+    sites: [linkedin, indeed]
+    search_terms:
+      - data scientist
+      - machine learning engineer
+      - ai engineer
+      - data engineer
+      - analytics engineer
+      - data analyst
+      - nlp engineer
+      - rag developer
+      - ai developer
+      - mlops engineer
+
+scraping:
+  results_per_search: 50
+  request_delay_seconds: 10
+  max_days_to_keep: 60
+
+filtering:
+  exclude_title_keywords:
+    - intern
+    - internship
+    - praktikum
+    - praktikant
+    - werkstudent
+    - ausbildung
+    - student
+    - thesis
+    - abschlussarbeit
+    - masterarbeit
+    - bachelorarbeit
+    - minijob
+    - aushilfe
+    - hilfskraft
+    - duales studium
+    - dualer student
+  exclude_companies:
+    - BearingPoint
+    - Michael Page
+    - adesso SE
+    - BridgingIT GmbH
+    - indivHR
+    - Lawrence Harvey
+    - univativ GmbH
+    - The Stepstone Group
+    - ALTEN Consulting Services
+    - Mayflower GmbH
+    - Optimus Search
+    - Crossover
+    - Cologne Intelligence GmbH
+    - TrioTech Recruitment
+    - IntaPeople
+    - Yellow Brick Road
+    - Manning Global AG
+    - Alexander Thamm GmbH
+    - TechBiz Global GmbH
+    - TechStarter
+    - Mindrift

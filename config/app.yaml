@@ -1,0 +1,19 @@
+# LLM settings — credentials loaded from environment variables
+llm:
+  base_url: ""   # override with GOOGLE_BASE_URL env var
+  model: ""      # override with GOOGLE_MODEL env var
+  relevance_score_threshold: 6.0  # jobs scoring below this are filtered out (0–10 scale)
+
+storage:
+  daily_data_dir: daily_data
+  processed_data_dir: data
+  documents_dir: documents
+  db_path: data/jobs.db
+  processed_filename: last_30_days.parquet
+
+backend:
+  host: "0.0.0.0"
+  port: 8000
+  cors_origins:
+    - "http://localhost:5173"  # Vue.js dev server
+    # add your Vercel deployment URL here after first deploy

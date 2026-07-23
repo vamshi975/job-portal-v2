@@ -5,6 +5,10 @@ on:
         - cron: '0 19 * * 1,2,3,4,5'   # weekdays at 19:00 UTC
     workflow_dispatch:                    # allow manual runs from GitHub UI
 
+env:
+    GOOGLE_BASE_URL: ${{ secrets.GOOGLE_BASE_URL }}
+    GOOGLE_MODEL: ${{ secrets.GOOGLE_MODEL }}
+
 jobs:
     run:
         runs-on: ubuntu-latest
@@ -22,11 +26,8 @@ jobs:
         - name: Install dependencies
           run: uv sync --frozen
 
-        - name: Run pipeline step 1 (scrape)
-          run: uv run python pipe1.py
-
-        - name: Run pipeline step 2 (merge + score)
-          run: uv run python pipe2.py
+        - name: Run pipeline
+          run: uv run python pipeline/run.py
 
         - name: Commit and push updated data
           run: |
