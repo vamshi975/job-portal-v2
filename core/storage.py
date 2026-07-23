@@ -65,7 +65,9 @@ def ensure_db_schema(storage: StorageConfig) -> None:
         conn.execute("""
             CREATE TABLE IF NOT EXISTS job_status (
                 uuid        TEXT PRIMARY KEY,
-                status      TEXT NOT NULL DEFAULT 'new',
+                status      TEXT NOT NULL DEFAULT 'new'
+                                CHECK (status IN ('new', 'interesting', 'applied')),
+                notes       TEXT,
                 updated_at  TEXT NOT NULL
             )
         """)
@@ -73,10 +75,20 @@ def ensure_db_schema(storage: StorageConfig) -> None:
             CREATE TABLE IF NOT EXISTS documents (
                 id            INTEGER PRIMARY KEY AUTOINCREMENT,
                 job_uuid      TEXT NOT NULL,
-                doc_type      TEXT NOT NULL,
+                doc_type      TEXT NOT NULL
+                                  CHECK (doc_type IN ('cv', 'cover_letter')),
                 file_path     TEXT NOT NULL,
                 country_style TEXT NOT NULL,
                 created_at    TEXT NOT NULL,
                 FOREIGN KEY (job_uuid) REFERENCES job_status(uuid)
             )
+        """)
+        # Indexes for the API's primary query patterns
+        conn.execute("""
+            CREATE INDEX IF NOT EXISTS idx_job_status_status
+            ON job_status (status)
+        """)
+        conn.execute("""
+            CREATE INDEX IF NOT EXISTS idx_documents_job_uuid
+            ON documents (job_uuid)
         """)
