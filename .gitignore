@@ -1,0 +1,19 @@
+# Data files - tracked intentionally when needed
+daily_data/*.parquet
+data/*.parquet
+data/*.pkl
+*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+
+# Node / Vue
+node_modules/
+dist/
+.nuxt/
+
+# OS
+.DS_Store
