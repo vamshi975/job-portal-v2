@@ -4,7 +4,7 @@ import pandas as pd
 from fastapi import APIRouter, Depends
 
 from backend.dependencies import get_config, get_job_service
-from backend.schemas import CountItem, DateCount, DashboardResponse, FunnelStats
+from backend.schemas import CountItem, CountryStats, DateCount, DashboardResponse, FunnelStats
 from backend.services.jobs import JobDataService
 from core.config import AppConfig
 from core.storage import get_db_connection
@@ -81,4 +81,32 @@ async def get_dashboard(
         application_funnel=funnel,
         top_companies=top_companies,
         jobs_over_time=jobs_over_time,
+    )
+
+
+@router.get("/country/{country}", response_model=CountryStats)
+async def get_country_stats(
+    country: str,
+    service: JobDataService = Depends(get_job_service),
+):
+    df = service.all_jobs()
+    df = df[df["country"].str.lower() == country.lower()]
+
+    if df.empty:
+        return CountryStats(
+            country=country,
+            total_jobs=0,
+            jobs_by_city=[],
+            jobs_by_role=[],
+            jobs_by_site=[],
+            top_companies=[],
+        )
+
+    return CountryStats(
+        country=country,
+        total_jobs=len(df),
+        jobs_by_city=_top_counts(df, "city", n=20),
+        jobs_by_role=_top_counts(df, "search_term", n=15),
+        jobs_by_site=_top_counts(df, "site", n=10),
+        top_companies=_top_counts(df, "company", n=10),
     )

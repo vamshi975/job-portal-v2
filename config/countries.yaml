@@ -2,7 +2,7 @@ countries:
   - name: Germany
     country_indeed: Germany
     location: Germany
-    sites: [linkedin, indeed, glassdoor]
+    sites: [linkedin, indeed]
     search_terms:
       - data scientist
       - machine learning engineer
@@ -18,7 +18,7 @@ countries:
   - name: Netherlands
     country_indeed: Netherlands
     location: Netherlands
-    sites: [linkedin, indeed, glassdoor]
+    sites: [linkedin, indeed]
     search_terms:
       - data scientist
       - machine learning engineer
@@ -34,7 +34,7 @@ countries:
   - name: Belgium
     country_indeed: Belgium
     location: Belgium
-    sites: [linkedin, indeed, glassdoor]
+    sites: [linkedin, indeed]
     search_terms:
       - data scientist
       - machine learning engineer
@@ -68,7 +68,7 @@ countries:
   - name: United States
     country_indeed: USA
     location: United States
-    sites: [linkedin, indeed, glassdoor]
+    sites: [linkedin, indeed]
     search_terms:
       - data scientist
       - machine learning engineer
@@ -84,7 +84,7 @@ countries:
   - name: Canada
     country_indeed: Canada
     location: Canada
-    sites: [linkedin, indeed, glassdoor]
+    sites: [linkedin, indeed]
     search_terms:
       - data scientist
       - machine learning engineer
@@ -100,7 +100,6 @@ countries:
   - name: Denmark
     country_indeed: Denmark
     location: Denmark
-    # Glassdoor NOT supported for Denmark (raises exception per research ticket #3)
     sites: [linkedin, indeed]
     search_terms:
       - data scientist
@@ -117,7 +116,6 @@ countries:
   - name: Sweden
     country_indeed: Sweden
     location: Sweden
-    # Glassdoor NOT supported for Sweden (raises exception per research ticket #3)
     sites: [linkedin, indeed]
     search_terms:
       - data scientist

@@ -37,6 +37,8 @@ def _series_to_schema(row: pd.Series, schema_cls):
 @router.get("", response_model=JobListResponse)
 async def list_jobs(
     country: Optional[str] = Query(None, description="Filter by country name"),
+    city: Optional[str] = Query(None, description="Filter by city name"),
+    site: Optional[str] = Query(None, description="linkedin | indeed | naukri"),
     status: Optional[str] = Query(None, description="new | interesting | applied"),
     min_score: Optional[float] = Query(None, ge=0, le=10),
     search: Optional[str] = Query(None, description="Substring match on title or company"),
@@ -51,6 +53,10 @@ async def list_jobs(
 
     if country:
         df = df[df["country"].str.lower() == country.lower()]
+    if city:
+        df = df[df["city"].str.lower() == city.lower()]
+    if site:
+        df = df[df["site"].str.lower() == site.lower()]
     if status:
         valid = {"new", "interesting", "applied"}
         if status not in valid:

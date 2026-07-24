@@ -81,3 +81,12 @@ class DocumentListResponse(BaseModel):
 
 class DocumentGenerateRequest(BaseModel):
     doc_type: str = "both"  # "cv" | "cover_letter" | "both"
+
+
+class CountryStats(BaseModel):
+    country: str
+    total_jobs: int
+    jobs_by_city: List[CountItem]
+    jobs_by_role: List[CountItem]    # breakdown by search_term
+    jobs_by_site: List[CountItem]
+    top_companies: List[CountItem]
