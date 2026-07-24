@@ -86,7 +86,7 @@ def score_jobs(df: pd.DataFrame, profile: UserProfile, llm: LLMConfig) -> pd.Dat
 
     from openai import OpenAI  # lazy import keeps startup fast when LLM is skipped
 
-    client = OpenAI(base_url=llm.base_url, api_key="not-needed")
+    client = OpenAI(base_url=llm.base_url, api_key=llm.api_key or "not-set")
     profile_text = _profile_summary(profile)
     jobs_list = df.to_dict("records")
     scores = [5.0] * len(jobs_list)

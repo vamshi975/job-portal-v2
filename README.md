@@ -36,9 +36,12 @@ cp .env.example .env
 Required variables:
 
 ```
+GOOGLE_API_KEY=your-google-api-key-here
 GOOGLE_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
 GOOGLE_MODEL=gemma-4-31b-it
 ```
+
+Get your API key at [https://aistudio.google.com/apikey](https://aistudio.google.com/apikey) (free tier available).
 
 The pipeline and backend both read these at startup. If they are absent, LLM scoring falls back to a neutral score of `5.0` and document generation uses placeholder text.
 
@@ -186,6 +189,7 @@ The pipeline runs automatically on weekdays at 19:00 UTC. Required repository se
 
 | Secret | Value |
 |--------|-------|
+| `GOOGLE_API_KEY` | Your Google AI Studio API key |
 | `GOOGLE_BASE_URL` | `https://generativelanguage.googleapis.com/v1beta/openai/` |
 | `GOOGLE_MODEL` | `gemma-4-31b-it` |
 

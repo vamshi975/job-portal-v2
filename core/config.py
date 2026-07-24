@@ -98,6 +98,9 @@ class LLMConfig(BaseModel):
     model: str = Field(
         default_factory=lambda: os.environ.get("GOOGLE_MODEL", "")
     )
+    api_key: str = Field(
+        default_factory=lambda: os.environ.get("GOOGLE_API_KEY", "")
+    )
     relevance_score_threshold: float = 6.0
 
 

@@ -33,7 +33,7 @@ def generate_cover_letter_body(
 
     from openai import OpenAI
 
-    client = OpenAI(base_url=llm.base_url, api_key="not-needed")
+    client = OpenAI(base_url=llm.base_url, api_key=llm.api_key or "not-set")
     prompt = (
         f"Write the body paragraphs of a professional cover letter. "
         f"Do NOT include a salutation, header, or closing — just the body.\n\n"
@@ -84,7 +84,7 @@ def generate_cv_summary(
 
     from openai import OpenAI
 
-    client = OpenAI(base_url=llm.base_url, api_key="not-needed")
+    client = OpenAI(base_url=llm.base_url, api_key=llm.api_key or "not-set")
     lang_note = (
         "Write in German. Do not use first-person pronouns (typical for German Profil sections)."
         if style.doc_language == "de"
