@@ -181,10 +181,10 @@ def test_list_documents_empty(app_with_data):
     assert resp.json()["documents"] == []
 
 
-def test_generate_documents_queued(app_with_data):
+def test_generate_documents_accepted(app_with_data):
     resp = app_with_data.post(
         "/jobs/uuid-de-1/documents",
         json={"doc_type": "both"},
     )
     assert resp.status_code == 200
-    assert resp.json()["status"] == "queued"
+    assert resp.json()["status"] == "generating"

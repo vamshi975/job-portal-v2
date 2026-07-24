@@ -42,6 +42,25 @@ industries:
   - HR
   - Insurance
 
+experience:
+  - title: "Data Scientist"
+    company: "[Your Company]"
+    location: "Germany"
+    start_date: "2022-01"
+    end_date: "present"
+    bullets:
+      - "[Key achievement with metric, e.g. Built RAG pipeline reducing manual review by 40%]"
+      - "[Second achievement, e.g. Deployed Azure ML model serving 500k predictions/day]"
+      - "[Third achievement, e.g. Led migration from Pandas to PySpark cutting runtime by 60%]"
+  - title: "Data Analyst"
+    company: "[Previous Company]"
+    location: "[Location]"
+    start_date: "2020-06"
+    end_date: "2021-12"
+    bullets:
+      - "[Achievement, e.g. Built Power BI dashboards adopted by 200+ stakeholders]"
+      - "[Achievement, e.g. Automated reporting pipeline saving 8 hours/week]"
+
 education:
   - degree: Master
     field: ""        # fill in your field of study

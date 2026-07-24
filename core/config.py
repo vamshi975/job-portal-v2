@@ -70,10 +70,20 @@ class EducationEntry(BaseModel):
     year: Optional[str] = None
 
 
+class ExperienceEntry(BaseModel):
+    title: str
+    company: str
+    location: Optional[str] = None
+    start_date: str  # "YYYY-MM" or "Month YYYY"
+    end_date: str = "present"
+    bullets: List[str] = []
+
+
 class UserProfile(BaseModel):
     personal: PersonalInfo
     skills: SkillsConfig = Field(default_factory=SkillsConfig)
     industries: List[str] = []
+    experience: List[ExperienceEntry] = []
     education: List[EducationEntry] = []
     languages: List[LanguageEntry] = []
     target_roles: List[str] = []

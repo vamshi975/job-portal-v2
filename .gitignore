@@ -15,8 +15,8 @@ data/*.parquet
 data/*.pkl
 *.csv
 
-# Generated documents — committed intentionally when needed
-documents/*.docx
+# Generated DOCX files live in documents/{uuid}/ — not tracked
+documents/
 
 # Node / Vue
 node_modules/
